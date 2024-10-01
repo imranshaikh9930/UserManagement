@@ -45,7 +45,7 @@ const UserList = ({ users, deleteUser }) => {
                 <td className="px-6 py-4">{user.name}</td>
                 <td className="px-6 py-4">{user.email}</td>
                 <td className="px-6 py-4">{user.phone}</td>
-                <td className="px-6 py-4 space-x-4">
+                <td className="px-6 py-4 space-x-4 flex items-center">
                   <button
                     onClick={() => handleEdit(user)}
                     className="text-blue-500 hover:text-blue-700"
