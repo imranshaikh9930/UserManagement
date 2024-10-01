@@ -3,12 +3,13 @@ import { useUserContext } from '../context/UserContext';
 import { NavLink } from 'react-router-dom';
 
 const UserList = ({ users, deleteUser }) => {
-  const { setEditingUser, openModal, setIsAddUser } = useUserContext();
+  const { setEditingUser, openModal, setIsAddUser,setIsUpdateUserModalOpen } = useUserContext();
 
   const handleEdit = (user) => {
     setEditingUser(user); // Set the user to be edited
     openModal(true); // Open the modal in edit mode
-    setIsAddUser(false);
+    // setIsAddUser(false);
+    setIsUpdateUserModalOpen(true)
   };
 
   const headers = ["Id", "Name", "Email", "Phone", "Actions"];
@@ -45,7 +46,7 @@ const UserList = ({ users, deleteUser }) => {
                 <td className="px-6 py-4">{user.name}</td>
                 <td className="px-6 py-4">{user.email}</td>
                 <td className="px-6 py-4">{user.phone}</td>
-                <td className="px-6 py-4 space-x-4 flex items-center">
+                <td className="px-6 py-4 space-x-4">
                   <button
                     onClick={() => handleEdit(user)}
                     className="text-blue-500 hover:text-blue-700"
